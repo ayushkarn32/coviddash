@@ -1,0 +1,13 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #668EF9; */
+  /* color: #F3F4F7; */
+  background-color: #F1F3FB;
+  color: #040317;
+}
