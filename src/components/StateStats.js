@@ -50,7 +50,6 @@ export default function StateStats() {
           return b.totalCases-a.totalCases;
         });
         settotal(temp);
-        // console.log(temp);  
       }
       //sort according to total active cases
       const sortByTotalActive=()=>{
@@ -58,7 +57,6 @@ export default function StateStats() {
           return b.totalActive-a.totalActive;
         });
         settotal(temp);
-        // console.log(temp);
       }
       //sort according to total recovered
       const sortByTotalRecovered=()=>{
@@ -76,25 +74,23 @@ export default function StateStats() {
         settotal(temp); 
       }
 
-      // //search according to state name
-      // const searchByState=()=>{
-      //   console.log(total)
-      //   let temp=total.filter((item)=>{
-      //     return item.state.toLowerCase().includes(search.toLowerCase());
-      //   });
-      //   settotal(temp);
-      //   console.log(temp);
-      // }
-      // const [search, setsearch] = useState("");
-      // const handleChange = (e) => {
-      //   setsearch(e.target.value);
-      // };
-      // const handleSubmit = (e) => {
+      //search according to state name
+      const searchByState=()=>{
+        console.log(total)
+        let temp=total.filter((item)=>{
+          return item.state.toLowerCase().includes(search.toLowerCase());
+        });
+        settotal(temp);
         
-      //   e.preventDefault();
-      //   searchByState();
-      // };
-      // console.log(total);
+      }
+      const [search, setsearch] = useState("");
+      const handleChange = (e) => {
+        setsearch(e.target.value);
+      };
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        searchByState();
+      };
 
     return (
         <>
@@ -103,8 +99,12 @@ export default function StateStats() {
              <div className="table-state">
               
               <div className="search-main-container">
-                <div className="search-box"><FontAwesomeIcon icon={faSearch} /><input type="text" placeholder="search" /><button >Search</button></div>
+                <div className="search-box"><FontAwesomeIcon icon={faSearch} /><input type="text" onChange={(e)=>handleChange(e)} placeholder="search" /></div>
+                <div className="submit-box"><div className='submit-btn'> <button onClick={handleSubmit} className='btn-submit'>Search</button></div></div>
+                <div className="reset-box"><div className='reset-btn'><button  onClick={getTotal} className='btn-reset'>reset</button></div></div>
+               
               </div>
+              
               <div className="table-head">
                 <div className="table-cell text-bold" >Name</div>
                 <div className="table-cell text-bold" onClick={sortByTotalCases}>Total Cases <FontAwesomeIcon className='point' icon={faSort} /></div>
