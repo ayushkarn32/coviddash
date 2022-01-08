@@ -21,7 +21,6 @@ export default function StateStats() {
       }, []);
 
       const getTotal= ()=>{
-        console.log("waiting")
         let totalCases=0;
         let totalDeaths=0;
         let totalRecovered=0;
@@ -76,7 +75,6 @@ export default function StateStats() {
 
       //search according to state name
       const searchByState=()=>{
-        console.log(total)
         let temp=total.filter((item)=>{
           return item.state.toLowerCase().includes(search.toLowerCase());
         });
