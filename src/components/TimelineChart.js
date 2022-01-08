@@ -5,37 +5,6 @@ import { useEffect, useState } from "react";
  import { Line } from 'react-chartjs-2';
  ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend );
  
-
-
-//   const getTotal=()=>{
-//     let totalCases=0;
-//     let totalDeaths=0;
-//     let totalRecovered=0;
-//     // const totalData=[];
-//     for(const states in result){
-//         for(const dates in result[states]){
-//             for(const cases in result[states][dates]){
-//                 totalCases+=result[states][dates][cases].confirmed;
-//                 totalDeaths+=result[states][dates][cases].deceased;
-//                 totalRecovered+=result[states][dates][cases].recovered;
-//                 // console.log(result[states][dates][cases].total);
-//             }
-            
-//         }
-
-//         // adding total cases for each state
-//         // totalCases+=result[states].total.confirmed;
-//         // totalDeaths+=result[states].total.deceased;
-//         // totalRecovered+=result[states].total.recovered;
-//     }
-
-
-//     let totalData=[{totalconfirm:totalCases.toLocaleString(),totalactive:(totalCases-totalRecovered-totalDeaths).toLocaleString(),totaldead:totalDeaths.toLocaleString(),totalrecovered:totalRecovered.toLocaleString()}];
-//     settotal(totalData);
-// }
-
-  
-
   
   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
