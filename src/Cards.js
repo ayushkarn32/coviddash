@@ -32,9 +32,6 @@ export default function Cards() {
         settotal(totalData);
   }
 
-// console.log(total[0].totalconfirm.toLocaleString());
-//   console.log(result);
-
 
     return (
         <div className='cases-main-wrapper'>
