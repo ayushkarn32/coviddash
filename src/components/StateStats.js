@@ -18,11 +18,10 @@ export default function StateStats() {
         };
       useEffect(() => {
         getdata(); 
-        getTotal();
-      }, [result]);
+      }, []);
 
-
-      const getTotal=()=>{
+      const getTotal= ()=>{
+        console.log("waiting")
         let totalCases=0;
         let totalDeaths=0;
         let totalRecovered=0;
@@ -42,27 +41,8 @@ export default function StateStats() {
       }
     
       useEffect(() => {
-        // sortByTotalActive();
-        // sortByTotalCases();
-        // sortByTotalDeaths();
-        // sortByTotalRecovered();
-        
-      }, [total]);
-
-      //sort according to state name
-      const sortByStateName=()=>{
-        [...total].sort((a,b)=>{
-          if(a.state>b.state){
-            return 1;
-          }
-          if(a.state<b.state){
-            return -1;
-          }
-          return 0;
-        });
-        settotal(total);
-      }
-
+        getTotal();
+      }, [result]);
       
       //sort according to total cases
       const sortByTotalCases=()=>{
@@ -95,7 +75,7 @@ export default function StateStats() {
         });
         settotal(temp); 
       }
-      
+
       // //search according to state name
       // const searchByState=()=>{
       //   console.log(total)
@@ -121,11 +101,12 @@ export default function StateStats() {
            <div className='stats-table-container'>
              <div className='table-title'><h2>Reports By States</h2></div>
              <div className="table-state">
+              
               <div className="search-main-container">
-                <div className="search-box"><FontAwesomeIcon icon={faSearch} /><input type="text" Splaceholder="search" /><button >Search</button></div>
+                <div className="search-box"><FontAwesomeIcon icon={faSearch} /><input type="text" placeholder="search" /><button >Search</button></div>
               </div>
               <div className="table-head">
-                <div className="table-cell text-bold" onClick={sortByStateName}>Name</div>
+                <div className="table-cell text-bold" >Name</div>
                 <div className="table-cell text-bold" onClick={sortByTotalCases}>Total Cases <FontAwesomeIcon className='point' icon={faSort} /></div>
                 <div className="table-cell text-bold"  onClick={sortByTotalActive} >Active Cases <FontAwesomeIcon className='point' icon={faSort}/></div>
                 <div className="table-cell text-bold" onClick={sortByTotalRecovered}>Recovered Cases <FontAwesomeIcon className='point' icon={faSort}  /></div>
