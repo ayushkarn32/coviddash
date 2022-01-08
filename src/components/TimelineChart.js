@@ -68,12 +68,6 @@ import { useEffect, useState } from "react";
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       }
-      // {
-      //   label: 'Dataset 2',
-      //   data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      //   borderColor: 'rgb(53, 162, 235)',
-      //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      // }
     ],
   };
   
@@ -115,8 +109,7 @@ export default function TimelineChart() {
               }
           }
           settotal(dateinfo);
-          // let totalData=[{totalconfirm:totalCases.toLocaleString(),totalactive:(totalCases-totalRecovered-totalDeaths).toLocaleString(),totaldead:totalDeaths.toLocaleString(),totalrecovered:totalRecovered.toLocaleString()}];
-          // settotal(totalData);
+         
     }
 
     console.log(total);
